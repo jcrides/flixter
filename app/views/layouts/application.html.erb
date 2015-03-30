@@ -31,7 +31,7 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-          <li><%= link_to current_user.email, user_path(current_user) %></li>
+          <li><%= link_to current_user.email, '#' %></li> <!-- user_path(current_user) -->
           <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
         <% else %>
           <li><%= link_to 'Sign in', new_user_session_path %></li>
@@ -50,6 +50,15 @@
 <% end %>
 
 <%= yield %>
+
+<br class="clear">
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">This be the footer.
+    <%= link_to 'Link', '#' %>
+    </p>
+  </div>
+</footer>
 
 </body>
 </html>
