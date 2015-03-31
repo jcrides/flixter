@@ -35,6 +35,19 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
     assert_redirected_to new_user_session_path
   end
 
+  test "unprocessable create invalid course" do
+  user = create(:user)
+  sign_in user
+
+  post :create, {:course => {
+                 :name        => 'A course',
+                 :description => 'Yup it is a course'
+                }
+  }
+
+  assert_response :unprocessable_entity
+  end
+
   test "can get show signed in" do
     user = create(:user)
     sign_in user
