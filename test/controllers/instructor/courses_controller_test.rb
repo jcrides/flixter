@@ -25,10 +25,10 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
   test "create redirect not signed in" do
     assert_no_difference 'Course.count' do
       post :create, {:course => {
-        :name        => 'A course',
-        :description => 'Yup it is a course',
-        :cost        => 24.99
-        }
+                     :name        => 'A course',
+                     :description => 'Yup it is a course',
+                     :cost        => 24.99
+                     }
       }
     end
 

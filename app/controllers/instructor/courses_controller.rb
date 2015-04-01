@@ -15,7 +15,7 @@ class Instructor::CoursesController < ApplicationController
   end
 
   def show
-    @course = Course.where(:id => params[:id]).first
+    @course = Course.includes(:sections).where(:id => params[:id]).first
     if @course.blank?
       render :text => 'Course not found.', :status => :not_found
     end
