@@ -4,7 +4,7 @@ class Instructor::SectionsControllerTest < ActionController::TestCase
   test "new section with course" do
     user = create(:user)
     sign_in user
-    course = create(:course)
+    course = create(:course, :user_id => user.id)
 
     get :new, :course_id => course.id
     assert_response :success
@@ -13,7 +13,7 @@ class Instructor::SectionsControllerTest < ActionController::TestCase
   test "create section" do
     user = create(:user)
     sign_in user
-    course = create(:course)
+    course = create(:course, :user_id => user.id)
 
     assert_difference 'course.sections.count' do
       post :create, :course_id => course.id, :section => { :title => 'A title is me' }

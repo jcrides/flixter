@@ -51,8 +51,8 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
   test "can get show signed in" do
     user = create(:user)
     sign_in user
+    course = create(:course, :user_id => user.id)
 
-    course = create(:course)
     get :show, :id => course.id
     assert_response :success
   end
@@ -62,14 +62,6 @@ class Instructor::CoursesControllerTest < ActionController::TestCase
 
     get :show, :id => course.id
     assert_redirected_to new_user_session_path
-  end
-
-  test "get course show invalid id" do
-    user = create(:user)
-    sign_in user
-
-    get :show, :id => 'oops'
-    assert_response :not_found
   end
 
 end
