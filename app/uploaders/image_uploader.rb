@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     storage :fog
   else
     storage :file
-    enable_processing: false
+    enable_processing = false
   end
 
   # Override the directory where uploaded files will be stored.
