@@ -15,6 +15,7 @@ gem 'figaro', '>= 1.0.0'
 gem 'fog'
 gem 'mini_magick'
 gem 'simple_form'
+gem 'stripe'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
