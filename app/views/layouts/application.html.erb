@@ -61,11 +61,39 @@
 </div>
 <br class="clear">
 
-<footer class="footer">
+<footer id="footer">
   <div class="container">
-    <p class="text-muted">Teachers
-    <%= link_to 'Teach a course', new_instructor_course_path %>
-    </p>
+    <div class="col-xs-12 col-sm-3">
+      <b>Teachers</b>
+      <br>
+      <%= link_to 'Teach a course', new_instructor_course_path, :class => "text-muted" %>
+      <br>
+      <%= link_to 'My Dashboard', dashboard_path, :class => "text-muted" %>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <b>About</b>
+      <br>
+      <%= link_to 'Team', '#', :class => "text-muted" %>
+      <br>
+      <%= link_to 'Careers', '#', :class => "text-muted" %>
+      <br>
+      <%= link_to 'Privacy Policy', '#', :class => "text-muted" %>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <b>Contact</b>
+      <br>
+      jeremycar@gmail.com
+      <br>
+      123 Street Rd
+      <br>
+      Concord, CA 94519
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <b>Social</b>
+      <%= image_tag 'github.png', :class => 'social-button' %>
+      <%= image_tag 'facebook.png', :class => 'social-button' %>
+      <%= image_tag 'google_plus.png', :class => 'social-button' %>
+    </div>
   </div>
 </footer>
 
