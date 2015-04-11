@@ -5,6 +5,9 @@ class LessonsControllerTest < ActionController::TestCase
     course = create(:course)
     section = create(:section, :course_id => course.id)
     lesson = create(:lesson, :section_id => section.id)
+    user = create(:user)
+    sign_in user
+    enrollment = create(:enrollment, :user_id => user.id, :course_id => course.id)
 
     get :show, :id => lesson.id
     assert_response :success
